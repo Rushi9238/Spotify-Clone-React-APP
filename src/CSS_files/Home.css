@@ -1,0 +1,50 @@
+.home {
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 80%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    background-color: rgb(32, 87, 100);
+    /* overflow: scroll; */
+}
+
+.home .navbar {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right: 2rem;
+    align-items: center;
+    border: 1px solid black;
+   
+}
+
+.home .navbar button {
+    width: 10%;
+    height: 90%;
+    margin: 1rem;
+    border-radius: 50px;
+    border: none;
+    background-color: white;
+    color: rgba(0, 0, 0);
+    font-size: 1.1rem;
+    font-weight: 550;   
+}
+.home-contain{
+    height: 90%;
+    /* border: 2px solid blue; */
+    width: 100%;
+    overflow: scroll;
+    z-index: 1;
+}
+.ListRow{
+    border: 2px solid red;
+    height: 70%;
+    width: 100%;
+     margin-top: 1rem;
+}
+.ListRow h1{
+    color: white;
+    margin: 1rem 2rem;
+}
+
+  
