@@ -25,7 +25,7 @@ const spotify = createSlice({
             state.episodes= action.payload
         },
         spotifyPlayPodcasts:(state,action)=>{
-
+            state.PlayPodcast=action.payload
         }
     },
 })

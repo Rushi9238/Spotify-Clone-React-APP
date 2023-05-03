@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
-const Prodcast = ({data}) => {
-    // const array=data.podcastUnionV2.episodesV2.items
-    // console.log(data.data.podcastUnionV2);
-    const arrayOfObj = Object.entries(data).map((e) => ( { [e[0]]: e[1] } ));
-    console.log(arrayOfObj);
-    // console.log(arrayOfObj[0].data.podcastUnionV2.episodesV2.items)
+const Prodcast = () => {
+  const {items}=useSelector((select)=>select.slice.PlayPodcast)
+  // console.log(items); 
   return (
-    <div>
-{
- 
-}
+    <div className='songDetail'>
+      <table style={{ width: '100%' }}>
+              <tbody >
+                <tr>
+                  <th>No.</th>
+                  <th>Song</th>
+                  <th>Type</th>
+                  <th>Duration</th>
+                </tr>
+                {items !== undefined ? items.map((ele,i) => {
+                  return <>
+                    <tr style={{ textAlign: 'center'}}>
+                      <td>{i+1}</td>
+                      <td><img src={ele && ele.entity.data.coverArt.sources[0].url} alt="" /> <span>{ele.entity.data.name}</span> </td>
+                      <td>{ele.entity.data.type}</td>
+                      <td> <p>{new Date(ele.entity.data.duration.totalMilliseconds).toISOString().slice(11, 19)}</p> </td>
+                    </tr>
+                  </>
+                }):''}
+              </tbody>
+            </table>
     </div>
   )
 }

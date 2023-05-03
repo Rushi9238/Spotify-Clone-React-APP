@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   const { albums, podcasts, episodes } = useSelector((select) => select.slice)
-  // console.log(data);
+  // console.log(episodes);
   const handelDetils = (id) => {
     // const Sarr=id.split(':')
     // console.log(Sarr);
@@ -38,11 +38,11 @@ const Home = () => {
         <div className="st1-row ListRow">
           <h1>Albums</h1>
           <div className="card-contain">
-            {albums !== 'undefine' ? albums.map((ele) => {
+            {albums !== 'undefined' ? albums.map((ele) => {
               return <div onClick={() => {
                 handelDetils(ele.data.uri.split(':'))
               }} className="card">
-                <img src={ele.data.images.items[0].sources[0].url} alt="" />
+                <img src={ele && ele.data.images.items[0].sources[0].url} alt="" />
                 <h3>{ele.data.name}</h3>
               </div>
               // console.log();

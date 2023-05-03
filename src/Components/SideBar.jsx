@@ -4,6 +4,7 @@ import logo from '../Const-files/Images/spotifyLogo.png'
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
+import { Link } from 'react-router-dom';
 const SideBar = () => {
   return (
     <div className='sidebar'>
@@ -12,9 +13,15 @@ const SideBar = () => {
       </div>
       <div className="side-contain">
         <ul>
-          <li><HomeIcon/> Home</li>
+        <Link to={'/'}>
+        <li><HomeIcon/> Home</li>
+        </Link>
+        <Link>
           <li> <SearchIcon/> Search</li>
+        </Link>
+          <Link>
           <li> <LibraryMusicIcon/> Your Library</li>
+          </Link>
         </ul>
       </div>
     </div>
