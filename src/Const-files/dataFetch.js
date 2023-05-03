@@ -1,7 +1,7 @@
 export const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '6f44d68f9cmshcbae00aed46cf1ep12db13jsna808fb3cc43b',
+		'X-RapidAPI-Key': '7cda47e458msha8c629e67c819f1p15a867jsn63807b665205',
 		'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
 	}
 };

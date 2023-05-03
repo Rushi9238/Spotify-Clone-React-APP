@@ -13,7 +13,7 @@ import SongDetails from './Components/SongDetails';
 function App() {
   const dispatch=useDispatch();
  useEffect(()=>{
-  const mainData= async(setData)=>{
+  const mainData= async()=>{
     const url='https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=10'
     try {
         const response = await fetch(url, options);
@@ -21,9 +21,7 @@ function App() {
         // console.log(result);
         const arrayOfObj = Object.entries(result).map((e) => ( { [e[0]]: e[1] } ));
         dispatch(spotifyData(arrayOfObj))
-        // arrayOfObj[0].map((ele)=>{
-        //   console.log(ele);
-        // })
+      
         dispatch(spotifyAlbum(arrayOfObj[4].playlists.items))
         dispatch(spotifyEpisodes(arrayOfObj[2].episodes.items))
         dispatch(spotifyPodcasts(arrayOfObj[5].podcasts.items))

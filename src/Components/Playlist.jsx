@@ -6,7 +6,7 @@ const Playlist = () => {
     console.log(PlayPodcast);
     return (
         <>
-        {PlayPodcast !== undefined ? <div  className='playlist'>
+        {PlayPodcast ? <div  className='playlist'>
             <div className="rightSide">
             <img src={PlayPodcast && PlayPodcast.images[0].url} alt="" />
                <div className="child">
@@ -18,7 +18,7 @@ const Playlist = () => {
             </div>
             <PlayCircleIcon color="secondary" sx={{ fontSize: 70 }}/>
            
-        </div> : ''}
+        </div> :<h1>Data Not Found</h1>}
         </>
     )
 }

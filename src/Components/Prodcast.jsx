@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 const Prodcast = () => {
   const {items}=useSelector((select)=>select.slice.PlayPodcast)
-  // console.log(items); 
+  console.log(items); 
   return (
     <div className='songDetail'>
       <table style={{ width: '100%' }}>

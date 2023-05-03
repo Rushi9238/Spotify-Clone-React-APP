@@ -1,5 +1,5 @@
 .details{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 100%;
     width: 80%;
     background: linear-gradient(transparent, rgb(254, 253, 253));
@@ -13,7 +13,7 @@
 
 }
 .songDetail{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 90%;
     width: 100%;
     overflow-y: scroll;

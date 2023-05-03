@@ -17,7 +17,7 @@ const SongDetails = () => {
     const fetch_songdata = async () => {
       const response = await fetch(url, options);
       const result = await response.json();
-      console.log(result);
+      // console.log(result);
       // setSongData(result)
       if (name === 'podcast_episodes') {
         dispatch(spotifyPlayPodcasts(result.data.podcastUnionV2.episodesV2))
