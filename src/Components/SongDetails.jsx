@@ -36,17 +36,19 @@ const SongDetails = () => {
 
     <div className='details'>
 
-      {name === 'podcast_episodes' ? <>
-        <h1>Prodcast</h1>
-        <Prodcast/>
+      {name === 'playlist' ? <>
+        <h1>Playlist</h1>
+        <Playlist/>
       </> : name === 'episode' ? <>
         <h1>Episode</h1>
         <Episode/>
-      </> : name === 'playlist' ? <>
-        <h1>Playlist</h1>
-        <Playlist/>
+      </> : name === 'podcast_episodes' ? <>
+        <h1>Prodcast</h1>
+        <Prodcast/>
       </> : null}
+      {/*  */}
     </div>
+
   )
 }
 
