@@ -42,7 +42,7 @@ mainData()
       <Route path='/:name/:id' element={<SongDetails/>}/>
     </Routes>
     </div>
-      <Footer/>
+      
     </div>
   );
 }
