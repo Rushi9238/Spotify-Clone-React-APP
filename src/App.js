@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import {Route,Routes} from 'react-router-dom'
-import { spotifyData } from './Redux/slice';
+import { spotifyData,spotifyAlbum,spotifyPodcasts,spotifyEpisodes } from './Redux/slice';
 import { useDispatch } from 'react-redux';
 import './App.css';
 import { options } from './Const-files/dataFetch';
 import SideBar from './Components/SideBar';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
+import SongDetails from './Components/SongDetails';
+
 
 function App() {
   const dispatch=useDispatch();
@@ -17,7 +19,15 @@ function App() {
         const response = await fetch(url, options);
         const result = await response.json();
         // console.log(result);
-        dispatch(spotifyData(result))
+        const arrayOfObj = Object.entries(result).map((e) => ( { [e[0]]: e[1] } ));
+        dispatch(spotifyData(arrayOfObj))
+        // arrayOfObj[0].map((ele)=>{
+        //   console.log(ele);
+        // })
+        dispatch(spotifyAlbum(arrayOfObj[4].playlists.items))
+        dispatch(spotifyEpisodes(arrayOfObj[2].episodes.items))
+        dispatch(spotifyPodcasts(arrayOfObj[5].podcasts.items))
+        console.log(arrayOfObj);
     } catch (error) {
         console.error(error);
     }
@@ -31,6 +41,7 @@ mainData()
     <SideBar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/:name/:id' element={<SongDetails/>}/>
     </Routes>
     </div>
       <Footer/>
